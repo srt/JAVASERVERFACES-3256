@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="forId" type="java.lang.String" required="true"
+                         shortDescription="id of the associated input component"/>
+    <composite:attribute name="value" type="java.lang.String" shortDescription="label text to display"/>
+    <composite:attribute name="styleClass" type="java.lang.String" shortDescription="additional style class for the label"/>
+</composite:interface>
+
+<composite:implementation>
+    <h:panelGroup class="labeledInput">
+        <h:outputLabel for="#{cc.attrs.forId}" value="#{cc.attrs.value}" styleClass="#{cc.attrs.styleClass}"/>
+        <composite:insertChildren/>
+    </h:panelGroup>
+</composite:implementation>
+</html>
