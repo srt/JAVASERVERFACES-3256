@@ -8,11 +8,18 @@
     <title>JAVASERVERFACES-3256</title>
 </h:head>
 <h:body>
-
     <h:form id="form1" enctype="multipart/form-data">
-        <my:myLabel forId="button" value="Button: ">
-            <h:commandButton id="button" value="click me twice" action="#{myBean.action}">
-                <f:ajax render=":form1"/>
+        <my:myLabel forId="button1" value="Button 1: ">
+            <h:commandButton id="button1" value="Step 1: Click me" action="#{myBean.action}">
+                <f:ajax render=":form2"/>
+            </h:commandButton>
+        </my:myLabel>
+    </h:form>
+    <br/>
+    <h:form id="form2" enctype="multipart/form-data">
+        <my:myLabel forId="button2" value="Button 2: ">
+            <h:commandButton id="button2" value="Step 2: Click me" action="#{myBean.action}">
+                <f:ajax render=":form2"/>
             </h:commandButton>
         </my:myLabel>
     </h:form>
